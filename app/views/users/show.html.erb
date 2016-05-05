@@ -1,21 +1,21 @@
 <div class="container">
   <div class="col-md-10 col-md-offset-1">
     <div class="row">
+      <%= link_to "Edit Profile", edit_user_path(@user) %>
+      <br>
       <div class="col-md-3 col-xs-12 thumbnail">
         <img src="<%=@user.profile_pic%>">
+          <ul>
+            <li>
+              Name: <%= @user.first_name %> <%= @user.last_name %>
+            </li>
+            <li>
+              Joined on: <%= @user.created_at.strftime("%m/%d/%Y") %>
+            </li>
+            <li>
+              Current City: <%= @user.current_city %>
+            </li>
+          </ul>
       </div>
-      <div class="col-md-3">
-        <ul>
-          <li>
-            Name: <%= @user.first_name %> <%= @user.last_name %>
-          </li>
-          <li>
-            Joined on: <%= @user.created_at.strftime("%m/%d/%Y") %>
-          </li>
-          <li>
-            Current City: <%= @user.current_city %>
-          </li>
-        </ul>
-    </div>
   </div>
 </div>
