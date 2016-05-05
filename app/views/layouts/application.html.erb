@@ -29,18 +29,14 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#">
               <% if current_user %>
                 <li><%= link_to "Profile", user_path(current_user) %></li>
                 <li><%= link_to "Log Out", logout_path %></li>
               <% else %>
-            </a>
           </li>
           <li>
-            <a href="#">
-              <li><%= link_to "Create Account", new_user_path %></li>
+              <li><%= link_to "Sign Up", new_user_path %></li>
               <li><%= link_to "Log In", login_path %></li>
-            </a>
           </li>
           <% end %>
         </ul>
