@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160505170252) do
     t.string   "profile_pic"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "password_digest"
   end
 
 end
