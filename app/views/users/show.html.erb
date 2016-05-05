@@ -7,13 +7,13 @@
       <div class="col-md-3">
         <ul>
           <li>
-            <%= @user.first_name %> <%= @user.last_name %>
+            Name: <%= @user.first_name %> <%= @user.last_name %>
           </li>
           <li>
-            <%= @user.created_at %>
+            Joined on: <%= @user.created_at.strftime("%m/%d/%Y") %>
           </li>
           <li>
-            <%= @user.current_city %>
+            Current City: <%= @user.current_city %>
           </li>
         </ul>
     </div>
