@@ -4,7 +4,7 @@
       <%= link_to "Edit Profile", edit_user_path(@user) %>
       <br>
       <div class="col-md-3 col-xs-12 thumbnail">
-        <img src="<%=@user.profile_pic%>">
+        <%= image_tag @user.image.url(:medium) %><br>
           <ul>
             <li>
               Name: <%= @user.first_name %> <%= @user.last_name %>

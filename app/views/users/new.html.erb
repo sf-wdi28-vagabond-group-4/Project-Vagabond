@@ -4,7 +4,10 @@
       <h3 class="panel-title">Sign Up</h3>
     </div>
     <div class="panel-body">
-      <%= form_for @user do |f| %>
+      <%= form_for @user, html: { multipart: true } do |f| %>
+      <div>
+        <!-- <%= f.file_field :image, placeholder: "Image" %> -->
+      </div>
         <div>
           <%= f.text_field :first_name, placeholder: "First Name" %>
         </div>
