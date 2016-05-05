@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :logged_in?, only: [:show]
+
   def index
     @users = User.all
   end
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    if !User.exists?(:email => @user.email)
+    if User.exists?(:email => @user.email)
       login(@user)
       redirect_to @user
     else
