@@ -5,5 +5,6 @@ class CitiesController < ApplicationController
     render :index
   end
 
-  
+
+
 end
