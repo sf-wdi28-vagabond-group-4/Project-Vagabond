@@ -24,5 +24,4 @@ class CitiesController < ApplicationController
     params.require(:city).permit(:city_name, :state, :country, :city_picture)
   end
 
-
 end
