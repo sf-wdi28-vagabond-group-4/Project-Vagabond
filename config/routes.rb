@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   get "/logout", to: "sessions#destroy"
 
-  get "/cities", to: "cities#index", as: "cities"
+  get "/cities", to: "cities#index"
 
 end
