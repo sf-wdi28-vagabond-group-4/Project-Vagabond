@@ -1,6 +1,6 @@
 <% @cities.each do |city| %>
-  <div class="col-ld-4 col-md-12">
-    <%= image_tag city.city_picture, class:"index_picture" %>
+  <div class="col-md-3 col-xs-12 thumbnail">
+    <%= link_to image_tag(city.city_picture), city_path(city) %>
     <div>
       <strong>
         <%= city.city_name %>
