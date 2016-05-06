@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   root to: "users#index"
 
   resources :users
-  resources :posts
   resources :cities
+  resources :posts
+
+
 
   get "/login", to: "sessions#new", as: "login"
 
