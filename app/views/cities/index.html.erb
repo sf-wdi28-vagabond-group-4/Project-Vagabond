@@ -1,11 +1,10 @@
 <% @cities.each do |city| %>
-  <div class-"col-ld-4 col-md-12">
-    <div style="background-image:url( <% city.city_picture %> )">
-      <div>
-        <strong>
-          <% city.city_name %>
-        </strong>
-      </div>
+  <div class="col-ld-4 col-md-12">
+    <%= image_tag city.city_picture, class:"index_picture" %>
+    <div>
+      <strong>
+        <%= city.city_name %>
+      </strong>
     </div>
   </div>
 <% end %>
