@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :set_city
+
   def index
     @posts = Post.all
   end
@@ -12,15 +15,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @city = City.find_by_id(params[:id])
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
-    @post.city_id = params[:id]
-    if @post.save
-      redirect_to post_path(@post)
-    else
-      render :new
-    end
+    post_params[:user_id] = current_user.id
+    @post = @city.posts.create(post_params)
+
+    redirect_to "/"
   end
 
   def edit
@@ -39,9 +37,12 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  private
+  def set_city
+    @city = City.find(params[:city_id])
+  end
+
   def post_params
-    params.require(:post).permit(:title, :content, :user_id, :city_id)
+    params.require(:post).permit(:title, :content, :city_id, :user_id)
   end
 
 

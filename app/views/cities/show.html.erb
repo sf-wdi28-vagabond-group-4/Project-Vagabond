@@ -4,7 +4,7 @@
   <h3><%= @city.city_name %></h3>
 
   <div>
-    <%= form_for @post do |f| %>
+    <%= form_for [@city, @post] do |f| %>
       <div>
         <%= f.text_field :title, placeholder: "Title" %>
       </div>
@@ -21,6 +21,8 @@
       <% @city.posts.each do |p| %>
           <li><strong><%= p.title %></strong>
               <p><%= p.content %></p>
+              <p><%= p.user_id %></p>
+              <p><%= p.created_at %></p>
           </li>
       <% end %>
     </ul>
