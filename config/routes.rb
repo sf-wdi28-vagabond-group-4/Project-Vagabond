@@ -14,6 +14,4 @@ Rails.application.routes.draw do
 
   get "/cities", to: "cities#index"
 
-  post "/cities/:city_id/posts", to: "posts#create"
-
 end

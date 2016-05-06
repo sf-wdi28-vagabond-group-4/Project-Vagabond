@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     post_params[:user_id] = current_user.id
     @post = @city.posts.create(post_params)
 
-    redirect_to "/"
+    redirect_to city_path(@city)
   end
 
   def edit
