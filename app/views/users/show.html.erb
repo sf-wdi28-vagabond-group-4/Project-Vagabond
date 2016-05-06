@@ -19,3 +19,11 @@
       </div>
   </div>
 </div>
+
+<ul>
+  <% @user.posts.each do |p| %>
+      <li><strong><%= p.title %></strong>
+          <p><%= p.content %></p>
+      </li>
+  <% end %>
+</ul>
