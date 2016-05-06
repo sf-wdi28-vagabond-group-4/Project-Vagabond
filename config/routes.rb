@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts
+  resources :cities
 
   get "/login", to: "sessions#new", as: "login"
 
