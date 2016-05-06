@@ -11,7 +11,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.create(city_params)
-    redirect_to city_path
+    redirect_to city_path(@city)
   end
 
   def show
