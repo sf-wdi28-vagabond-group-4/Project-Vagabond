@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+  has_many :posts
   has_secure_password
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "150x150#" },
