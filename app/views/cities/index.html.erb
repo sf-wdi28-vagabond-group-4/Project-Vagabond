@@ -1,0 +1,11 @@
+<% @cities.each do |city| %>
+  <div class-"col-ld-4 col-md-12">
+    <div style="background-image:url( <% city.city_picture %> )">
+      <div>
+        <strong>
+          <% city.city_name %>
+        </strong>
+      </div>
+    </div>
+  </div>
+<% end %>
