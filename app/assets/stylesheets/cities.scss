@@ -1,9 +1,18 @@
-// Place all the styles related to the cities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.show_picture {
-  width: 400px;
+.jumbotron-index{
+  width: auto;
   height: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
+  text-align: center;
+  position:relative;
+}
+
+.container-show{
+  background-size: contain;
+}
+.show-picture{
+  object-fit: contain;
+
+}
+
+.col-md-6 col-xs-12 thumbnail{
+  object-fit: fill;
 }

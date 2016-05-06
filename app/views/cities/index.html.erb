@@ -1,10 +1,20 @@
-<% @cities.each do |city| %>
-  <div class="col-md-3 col-xs-12 thumbnail">
-    <%= link_to image_tag(city.city_picture), city_path(city) %>
+
+
+
+<div class="jumbotron-index">
+  <div class="container">
+    <h1>CITIES</h1>
+    <%= image_tag("/Users/scottmadrid/wdi/rubyFiles/Project-Vagabond/app/assets/images/city_pic") %>
+  </div>
+</div>
+
+  <% @cities.each do |city| %>
+
+    <div class="col-md-6 col-xs-12 thumbnail">
+      <%= link_to image_tag(city.city_picture), city_path(city) %>
     <div>
-      <strong>
-        <%= city.city_name %>
-      </strong>
+      <strong><%= city.city_name %></strong>
     </div>
   </div>
+
 <% end %>
