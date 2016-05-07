@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = @city.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -34,13 +34,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to post_path(@post)
+    redirect_to city_post_path(@city, @post)
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to user_path(current_user)
   end
 
 

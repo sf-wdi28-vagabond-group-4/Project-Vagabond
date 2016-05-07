@@ -42,8 +42,8 @@
                     <%= p.created_at %>
                   </li>
                 </ul>
-                <%= link_to "Edit", edit_city_post_path(@post.city_id, @post), class: "btn btn-default"%>
-                <%= link_to "Delete", city_post_path(@post.city_id, @post), method: :delete, class: "btn btn-default"%>
+                <%= link_to "Edit", edit_city_post_path(p.city, p), class: "btn btn-default"%>
+                <%= link_to "Delete", city_post_path(p.city, p), method: :delete, class: "btn btn-default"%>
               </div>
             </div>
 
