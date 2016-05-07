@@ -15,10 +15,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    post_params[:user_id] = current_user.id
-    @post = @city.posts.create(post_params)
-
-    redirect_to city_path(@city)
+    @post = @city.posts.new(post_params)
+    @post.user_id = current_user.id
+    if @post.save
+      redirect_to city_path(@city)
+    else
+      render :new
+    end
   end
 
   def edit

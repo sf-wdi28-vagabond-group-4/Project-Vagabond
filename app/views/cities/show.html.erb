@@ -20,9 +20,9 @@
     <ul>
       <% @city.posts.each do |p| %>
           <li><strong><%= p.title %></strong>
-              <p><%= p.content %></p>
-              <p><%= p.user_id %></p>
-              <p><%= p.created_at %></p>
+              <p>Content: <%= p.content %></p>
+              <p>User ID: <%= p.user_id %></p>
+              <p>Created At: <%= p.created_at %></p>
           </li>
       <% end %>
     </ul>
