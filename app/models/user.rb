@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
+  validates :email, uniqueness: true
+
   has_many :posts
   has_secure_password
-
-  validates :email, uniqueness: true
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "150x150#" },
   default_url: "default_image.png"
