@@ -10,6 +10,13 @@
   </div>
 </div>
 
+<!-- Creates notice if successful post(post.contoller.create) -->
+<% if flash[:notice] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-body">
@@ -18,26 +25,28 @@
             <div class="col-md-3 col-xs-12 thumbnail">
                <#%= image_tag @user.profile_pic %>
             </div>
-
+            <%= paginate @posts %>
+            <% @posts.each do |p| %>
             <div class="col-md-9 col-xs-12">
               <ul class="list-group form-inline">
                 <li class="list-group-item">
                   <h4 class='inline-header'>Title:</h4>
-                   <#%= @post.title %>
+                   <%= p.title %>
                 </li>
 
                 <li class="list-group-item">
                   <h4 class='inline-header'>Content:</h4>
-                  <#%= @post.content %>
+                  <%= p.content %>
                 </li>
 
                 <li class="list-group-item">
                   <h4 class='inline-header'>Date Posted:</h4>
-                  <#%= @post.created_at %>
+                  <%= p.created_at %>
                 </li>
+                <% end %>
               </ul>
-              <button class='btn btn-info'>EDIT POST</button>
-              <button class='btn btn-danger'>DELETE POST</button>
+              <%= link_to "Edit", edit_city_post_path(p.city, p), class: "btn btn-default"%>
+              <%= link_to "Delete", city_post_path(p.city, p), method: :delete, class: "btn btn-default"%>
             </div>
           </div>
 
@@ -59,20 +68,3 @@
       <%= f.submit "Save Post" %>
     <% end %>
   </div>
-
-  <div>
-    <h4><%=  @city.city_name %> Posts</h4>
-    <ul>
-      <%= paginate @posts %>
-      <% @posts.each do |p| %>
-          <li><strong><%= p.title %></strong>
-              <p>Content: <%= p.content %></p>
-              <p>User ID: <%= p.user_id %></p>
-              <p>Created At: <%= p.created_at %></p>
-          </li>
-      <% end %>
-    </ul>
-
-  </div>
-
-</div>

@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container-index">
     <h1 class="display-3">Welcome to Vagabond</h1>
