@@ -51,15 +51,15 @@ class PostsController < ApplicationController
   end
 
 
-private
+  private
 
-  def set_city
-    @city = City.find(params[:city_id])
-  end
+    def set_city
+      @city = City.find(params[:city_id])
+    end
 
-  def post_params
-    params.require(:post).permit(:title, :content, :city_id, :user_id)
-  end
+    def post_params
+      params.require(:post).permit(:title, :content, :city_id, :user_id)
+    end
 
 
 end
