@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = @city.posts.find(params[:id])
   end
 
   def new
@@ -25,7 +25,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = @city.posts.find(params[:id])
+    unless current_user.id == @post.user.id
+      redirect_to user_path(current_user)
+    end
   end
 
   def update
@@ -39,6 +42,9 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
+
+
+private
 
   def set_city
     @city = City.find(params[:city_id])

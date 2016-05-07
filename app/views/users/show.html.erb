@@ -17,6 +17,7 @@
           </ul>
           <%= link_to "Edit Profile", edit_user_path(@user) %>
       </div>
+
       <div class="col-md-6 col-xs-12" id="user-post-profile">
         <% @user.posts.each do |p| %>
         <div class="panel panel-default">
@@ -41,24 +42,17 @@
                     <%= p.created_at %>
                   </li>
                 </ul>
-                <button class='btn btn-info'>EDIT POST</button>
-                <button class='btn btn-danger'>DELETE POST</button>
+                <%= link_to "Edit", edit_city_post_path(@post.city_id, @post), class: "btn btn-default"%>
+                <%= link_to "Delete", city_post_path(@post.city_id, @post), method: :delete, class: "btn btn-default"%>
               </div>
             </div>
 
 
           </div>
         </div>
-        <!-- <ul>
-          <% @user.posts.each do |p| %>
-            <div class="user-post">
-              <li><strong><%= p.title %></strong>
-                  <p><%= p.content %></p>
-              </li>
-            </div>
-          <% end %>
-        </ul> -->
         <% end %>
       </div>
+
+    </div>
   </div>
 </div>
