@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "welcome#index"
 
   resources :users
   resources :cities do
     resources :posts
   end
+  
+  get "/welcome", to: "welcome#index"
 
   get "/login", to: "sessions#new", as: "login"
 
