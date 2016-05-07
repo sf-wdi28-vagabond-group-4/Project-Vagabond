@@ -1,7 +1,4 @@
-<!-- <div class="col-md-8 col-offset-md-2">
-  <%= image_tag @city.city_picture, class:"show_picture" %>
-  <%= @city.city_name %>
-</div> -->
+
 
 <%= link_to "Back to Cities", cities_path %>
 <div class="jumbotron-show">
@@ -48,3 +45,32 @@
         </div>
       </div>
     </div>
+
+  <h3><%= @city.city_name %></h3>
+
+  <div>
+    <%= form_for [@city, @post] do |f| %>
+      <div>
+        <%= f.text_field :title, placeholder: "Title" %>
+      </div>
+      <div>
+        <%= f.text_area :content, placeholder: "Content" %>
+      </div>
+      <%= f.submit "Save Post" %>
+    <% end %>
+  </div>
+
+  <div>
+    <h4><%=  @city.city_name %> Posts</h4>
+    <ul>
+      <% @city.posts.each do |p| %>
+          <li><strong><%= p.title %></strong>
+              <p>Content: <%= p.content %></p>
+              <p>User ID: <%= p.user_id %></p>
+              <p>Created At: <%= p.created_at %></p>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
