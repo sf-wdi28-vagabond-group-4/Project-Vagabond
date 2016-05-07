@@ -1,10 +1,34 @@
 .jumbotron {
-  background-image: url(https://goo.gl/pSKssj);
+  background-image: url(http://c.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/11/3021592-poster-1280-cities.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 400px;
-  text-align: right;
+  height: 100vh;
+  text-align: center;
   color: white;
   text-shadow: 2px 2px 2px #DF9958;
+}
+
+.container-index h1{
+  font-size: 120px;
+}
+
+
+
+.container-index p{
+  font-size: 50px;
+}
+
+.navbar{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#profile-row{
+  width:auto;
+  height: auto;
+}
+
+#user-post-profile{
+  color: red;
 }
