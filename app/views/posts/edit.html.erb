@@ -1,6 +1,6 @@
 <h2> Edit Post </h2>
 
-<%= form_for @post do |f| %>
+<%= form_for [@city, @post] do |f| %>
   <div>
     <%= f.text_field :title, placeholder: "Title" %>
   </div>

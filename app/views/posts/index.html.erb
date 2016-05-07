@@ -1,6 +1,6 @@
 <% @posts.each do |p| %>
   <div>
-    <h3><%= link_to "#{p.title}", post_path(p)%></h3>
+    <h3><%= link_to "#{p.title}", city_post_path(p)%></h3>
     <p><%= p.content %><p>
   </div>
 <% end %>
