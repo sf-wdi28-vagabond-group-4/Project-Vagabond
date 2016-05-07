@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :logged_in?, only: [:show]
 
   def index
@@ -17,8 +16,8 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to @user
     else
-      flash[:notice] = "Email already in use"
-      redirect_to login_path
+      flash.now[:notice] = "Email already in use"
+      redirect_to new_user_path
     end
   end
 
