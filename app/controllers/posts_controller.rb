@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   end
 
 
- private
+  private
 
     def set_city
       @city = City.find(params[:city_id])
