@@ -5,10 +5,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
-    @user = User.new
-    render :new
-  end
+
 
   def create
     @user = User.create(user_params)
@@ -16,16 +13,22 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to @user
     else
-      flash.now[:notice] = "Email already in use"
-      redirect_to new_user_path
+      flash[:notice] = "Sign up not succcessful, please enter information."
+      render :new
     end
   end
 
   def show
     @user = User.find_by_id(params[:id])
+  
     if current_user != @user
       redirect_to root_path
     end
+  end
+
+  def new
+    @user = User.new
+    render :new
   end
 
   def edit
