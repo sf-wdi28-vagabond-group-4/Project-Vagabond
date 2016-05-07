@@ -63,7 +63,8 @@
   <div>
     <h4><%=  @city.city_name %> Posts</h4>
     <ul>
-      <% @city.posts.each do |p| %>
+      <%= paginate @posts %>
+      <% @posts.each do |p| %>
           <li><strong><%= p.title %></strong>
               <p>Content: <%= p.content %></p>
               <p>User ID: <%= p.user_id %></p>
@@ -71,6 +72,7 @@
           </li>
       <% end %>
     </ul>
+
   </div>
 
 </div>
