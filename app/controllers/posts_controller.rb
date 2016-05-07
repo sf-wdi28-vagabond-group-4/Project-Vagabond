@@ -18,8 +18,10 @@ class PostsController < ApplicationController
     @post = @city.posts.new(post_params)
     @post.user_id = current_user.id
     if @post.save
+      flash[:notice] = "New Post Created!"
       redirect_to city_path(@city)
     else
+      flash[:error] = @post.errors.full_messages
       render :new
     end
   end
@@ -39,8 +41,13 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
+    
+    if @post.destroy
+      flash[:notice] = "Deleted Post!"
     redirect_to user_path(current_user)
+    else
+      flash[:error] = @post.errors.full_messages
+    end
   end
 
 

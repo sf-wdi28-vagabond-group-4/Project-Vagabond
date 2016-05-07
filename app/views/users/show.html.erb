@@ -17,6 +17,12 @@
           </ul>
           <%= link_to "Edit Profile", edit_user_path(@user) %>
       </div>
+      <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
 
       <div class="col-md-6 col-xs-12" id="user-post-profile">
         <% @user.posts.each do |p| %>
