@@ -18,7 +18,7 @@ class CitiesController < ApplicationController
     @city = City.find_by_id(params[:id])
     @post = Post.new
     @posts = @city.posts
-    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
+    @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
   end
 
   private
