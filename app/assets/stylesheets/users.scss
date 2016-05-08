@@ -1,34 +1,33 @@
-.jumbotron {
-  background-image: url(http://c.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/11/3021592-poster-1280-cities.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
+
+/**
+USER SHOW PAGE
+**/
+.container-user-show {
+  margin-top: 20px;
+}
+.user-show-profile-info {
+  margin-bottom: 10px;
   text-align: center;
-  color: white;
-  text-shadow: 2px 2px 2px #DF9958;
 }
-
-.container-index h1{
-  font-size: 120px;
+.user-show-profile-pic {
+  margin-top: 20px;
 }
-
-
-
-.container-index p{
-  font-size: 50px;
+.user-show-user-posts-header {
+  text-align: center;
 }
-
-.navbar{
-  margin-bottom: 0px;
+.user-show-post-header-row {
+  height:100%;;
+}
+.user-show-post-date {
+  margin-top: -35px;
+  margin-right: 20px;
+}
+.user-post-container {
+  margin-top: 20px;
+}
+.user-show-post-title {
   margin-top: 0px;
 }
-
-#profile-row{
-  width:auto;
-  height: auto;
-}
-
-#user-post-profile{
-  color: red;
+.user-show-post-button {
+  margin-right: 10px;
 }

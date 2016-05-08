@@ -1,4 +1,4 @@
-<div class="banner city-container">
+<div class="city-show-banner city-container">
     <%= image_tag @city.city_picture, class: 'city-show-header-image img-responsive' %>
 </div>
 <div class="city-show-container">
@@ -36,9 +36,7 @@
               <div class="col-md-8 col-xs-12">
                 <ul class="list-group form-inline">
                   <li class="list-group-item">
-
                     <strong> <%= p.title %></strong><span class="pull-right"><%= p.created_at.strftime("%m/%d/%Y") %></span>
-
                   </li>
 
                   <li class="list-group-item">
