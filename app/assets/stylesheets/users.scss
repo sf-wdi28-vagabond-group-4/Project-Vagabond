@@ -16,6 +16,7 @@ USER SHOW PAGE
   text-align: center;
 }
 .user-show-post-header-row {
+  margin-top: 10px;
   height:100%;;
 }
 .user-show-post-date {
@@ -30,4 +31,9 @@ USER SHOW PAGE
 }
 .user-show-post-button {
   margin-right: 10px;
+}
+.pagination {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
 }
