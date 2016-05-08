@@ -1,20 +1,32 @@
-.jumbotron-index{
-  width: auto;
-  height: auto;
-  text-align: center;
-  position:relative;
-}
-
-.container-show{
-  background-size: contain;
-}
-
 /**
 CITIES INDEX PAGE
 **/
 
 img {
   width: 100%;
+}
+.city-container {
+  width: 100%;
+  height: 20%;
+  background-size:contain;
+}
+
+.banner {
+  background-position: center;
+  height: 400px;
+}
+
+.city-show-container {
+  background-color: #f4f4f4;
+}
+
+.city-show-header-image {
+  height:400px;
+  background-size:contain;
+}
+
+.city-show-header-title {
+  text-align: center;
 }
 
 .cities-index-header {
