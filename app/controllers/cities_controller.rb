@@ -21,6 +21,16 @@ class CitiesController < ApplicationController
     @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
   end
 
+  def edit
+    @city = City.find_by_id(params[:id])
+  end
+
+  def update
+    @city = City.find_by_id(params[:id])
+    @city.update(city_params)
+    redirect_to city_path(@city)
+  end
+
   private
 
   def city_params
