@@ -1,70 +1,62 @@
-
-
-<%= link_to "Back to Cities", cities_path %>
-<div class="jumbotron-show">
-  <div class="container-show">
-    <h1><%= @city.city_name %></h1>
-
-      <%= image_tag @city.city_picture, class: 'img-responsive' %>
-
-  </div>
+<div class="banner city-container">
+    <%= image_tag @city.city_picture, class: 'city-show-header-image img-responsive' %>
 </div>
+<div class="city-show-container">
+  <h3 class="city-show-header-title"><%= @city.city_name %></h3>
 
-<h3><%= @city.city_name %></h3>
+  <div>
+    <%= form_for [@city, @post] do |f| %>
+      <div>
+        <%= f.text_field :title, placeholder: "Title" %>
+      </div>
+      <div>
+        <%= f.text_area :content, placeholder: "Content" %>
+      </div>
+      <%= f.submit "Save Post" %>
+    <% end %>
+  </div>
 
-<div>
-  <%= form_for [@city, @post] do |f| %>
-    <div>
-      <%= f.text_field :title, placeholder: "Title" %>
+  <!-- Creates notice if successful post(post.contoller.create) -->
+  <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:notice] %>
     </div>
-    <div>
-      <%= f.text_area :content, placeholder: "Content" %>
-    </div>
-    <%= f.submit "Save Post" %>
   <% end %>
-</div>
 
-<!-- Creates notice if successful post(post.contoller.create) -->
-<% if flash[:notice] %>
-  <div class="alert alert-success" role="alert">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+  <%= paginate @posts %>
+  <% @city.posts.each do |p| %>
+  <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class='row'>
+              <div class="col-md-4 col-xs-12">
+                 <%= image_tag("default_image.png", class: "img-responsive") %>
+              </div>
 
-<%= paginate @posts %>
-<% @city.posts.each do |p| %>
-<div class="container">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class='row'>
-            <div class="col-md-4 col-xs-12">
-               <%= image_tag("default_image.png", class: "img-responsive") %>
+              <div class="col-md-8 col-xs-12">
+                <ul class="list-group form-inline">
+                  <li class="list-group-item">
+
+                    <h4><strong> <%= p.title %></strong></h4>
+                    <%= p.created_at %>
+                  </li>
+
+                  <li class="list-group-item">
+
+                  <span class="show-content">  <%=h truncate(p.content, :length => 80) %></span>
+                  <%= link_to "See More", city_post_path(p.city, p), class:"btn btn-primary"%>
+                  </li>
+
+                </ul>
+                <%= link_to "Edit", edit_city_post_path(p.city, p), class: "btn btn-default"%>
+                <%= link_to "Delete", city_post_path(p.city, p), method: :delete, class: "btn btn-default"%>
+              </div>
             </div>
 
-            <div class="col-md-8 col-xs-12">
-              <ul class="list-group form-inline">
-                <li class="list-group-item">
 
-                  <h4><strong> <%= p.title %></strong></h4>
-                  <%= p.created_at %>
-                </li>
-
-                <li class="list-group-item">
-
-                <span class="show-content">  <%=h truncate(p.content, :length => 80) %></span>
-                <%= link_to "See More", city_post_path(p.city, p), class:"btn btn-primary"%>
-                </li>
-
-
-
-              </ul>
-              <%= link_to "Edit", edit_city_post_path(p.city, p), class: "btn btn-default"%>
-              <%= link_to "Delete", city_post_path(p.city, p), method: :delete, class: "btn btn-default"%>
-            </div>
           </div>
-
-
         </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
+
+</div>
