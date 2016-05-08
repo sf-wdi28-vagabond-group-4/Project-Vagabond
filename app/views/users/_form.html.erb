@@ -12,18 +12,26 @@
     <div class="panel-body">
       <%= form_for @user, html: { multipart: true } do |f| %>
         <div class="form-field">
+          <%= f.label :profile_picture %>
+          <%= f.file_field :image %>
+        </div>
+        <div class="form-field">
+          <%= f.label :first_name %>
           <%= f.text_field :first_name, required: true, class: "fname", placeholder: "First Name" %>
         </div>
         <div class="form-field">
+          <%= f.label :last_name %>
           <%= f.text_field :last_name, required: true, class: "lname", placeholder: "Last Name" %>
         </div>
         <div class="form-field">
+          <%= f.label :email %>
           <%= f.text_field :email, required: true, class: "email", placeholder: "Email" %>
         </div>
         <div class="form-field">
+          <%= f.label :password %>
           <%= f.password_field :password, required: true, class: "password", placeholder: "Password" %>
         </div>
-        <%= f.submit "Sign Up" %>
+        <%= f.submit "Update" %>
       <% end %>
     </div>
   </div>
