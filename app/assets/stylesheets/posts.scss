@@ -1,3 +1,24 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**
+POSTS SHOW PAGE
+**/
+
+.post-show-header{
+  text-align: center;
+}
+.post-show-container {
+  margin-top: 20px;
+}
+.post-show-profile-picture {
+  margin-top: 20px;
+}
+.post-show-content {
+  margin-top: 20px;
+  line-height: 1.6em;
+}
+.post-show-user-email {
+  text-align: center;
+}
