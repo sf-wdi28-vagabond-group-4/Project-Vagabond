@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find_by_id(@post.user_id)
   end
 
   def new
@@ -28,10 +29,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = @city.posts.find(params[:id])
-    unless current_user.id == @post.user.id
-      render :show
-      flash[:error] = "Not allowed to edit others post"
-    end
+    # unless current_user.id == @post.user.id
+    #   render :show
+    #   flash[:error] = "Not allowed to edit others post"
+    # end
   end
 
   def update
