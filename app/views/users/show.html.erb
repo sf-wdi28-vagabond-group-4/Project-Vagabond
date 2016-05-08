@@ -26,8 +26,8 @@
     </div>
 
     <div class="user-show-user-posts-header"><h3><%= @user.first_name %>'s Posts:</h3></div>
-
-    <% @user.posts.each do |p| %>
+    <%= paginate @posts %>
+    <% @posts.each do |p| %>
       <div class="user-post-container container">
         <div class="panel panel-default">
           <div class="panel panel-body">
@@ -57,5 +57,6 @@
         </div>
       </div>
     <% end %>
+    <%= paginate @posts %>
   </div>
 </div>
