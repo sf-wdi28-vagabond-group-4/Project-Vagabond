@@ -3,7 +3,7 @@
 <div class="container main">
   <div class="row inline">
     <% @cities.each do |city| %>
-      <div class="city-index-image col-md-4 col-sm-6 col-xs-12 view view-first">
+      <div class="city-index-image col-md-4 col-sm-12 view view-first">
         <%= link_to image_tag(city.city_picture), city_path(city), class: "city-image img-responsive" %>
         <div class="mask city-index-city-name"><h2><%= city.city_name %></h2></div>
       </div>
