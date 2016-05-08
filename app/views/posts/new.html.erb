@@ -1,5 +1,11 @@
+
+<% if flash[:error] %>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
 <h2> New Post </h2>
 
-  <%= render "form" %>
 
-  
+  <%= render "form" %>
