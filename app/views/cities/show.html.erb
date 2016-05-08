@@ -39,33 +39,32 @@
 
   <%= paginate @posts %>
   <% @posts.each do |p| %>
-    <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class='row'>
-            <div class="col-md-4 col-xs-12">
-               <%= image_tag("default_image.png", class: "img-responsive") %>
+    <div class="user-post-container container">
+        <div class="panel panel-default">
+            <div class="panel panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <%= link_to image_tag(@user.image), user_path(@user), class: "city-image img-responsive" %>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="user-show-post-header-row">
+                            <h3 class="user-show-post-title"><%= link_to "#{p.title}", city_post_path(p.city, p) %></h3>
+                            <h4 class="pull-right user-show-post-date"><small>posted <%= time_ago_in_words(p.created_at) %> ago</small></h4>
+                        </div>
+                        <div>
+                            <p><%=h truncate(p.content, :length => 1000) %></p>
+                            <%= link_to "Read More", city_post_path(p.city, p), class:"read-more"%>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-md-8 col-xs-12">
-              <ul class="list-group form-inline">
-                <li class="list-group-item">
-                  <strong> <%= p.title %></strong><span class="pull-right"><small>posted <%= time_ago_in_words(p.created_at) %> ago</small></span>
-                </li>
-
-                <li class="list-group-item">
-
-                <span class="show-content">  <%=h truncate(p.content, :length => 1000) %></span>
-                <%= link_to "See More", city_post_path(p.city, p), class:"btn btn-primary"%>
-                </li>
-
-              </ul>
-              <%= link_to "Edit", edit_city_post_path(p.city, p), class: "btn btn-default btn-primary"%>
-              <%= link_to "Delete", city_post_path(p.city, p), method: :delete, class: "btn btn-default btn-danger"%>
+            <div class="panel-footer">
+                <div class="row">
+                    <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
+                    <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
   <% end %>
   <%= paginate @posts %>

@@ -1,11 +1,27 @@
-<h2> Edit Post </h2>
+<h2 class="post-show-header"> Editing <%= @post.title %> </h2>
 
-<%= form_for [@city, @post] do |f| %>
-  <div>
-    <%= f.text_field :title, placeholder: "Title" %>
+<div class="col-md-6 col-md-offset-3">
+    <% if flash[:error] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Edit Post</h3>
+    </div>
+    <div class="panel-body">
+      <%= form_for [@city, @post] do |f| %>
+        <div class="form-field">
+          <%= f.text_field :title, required: true, placeholder: "Title" %>
+        </div>
+        <div class="form-field">
+          <%= f.text_area :content, required: true, placeholder: "Content" %>
+        </div>
+        <div class="form-field">
+        <%= f.submit "Save", class: "btn btn-lg btn-primary city-show-post-button"%>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.text_area :content, placeholder: "Content" %>
-  </div>
-  <%= f.submit "Save Post" %>
-<% end %>
+</div>
