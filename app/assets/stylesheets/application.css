@@ -14,3 +14,11 @@
  *= require_tree .
  *= require_self
  */
+
+.form_field {
+  width: 100%;
+}
+input {
+  width: 100%;
+  margin-bottom: 10px;
+}

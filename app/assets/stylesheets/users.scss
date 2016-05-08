@@ -2,6 +2,7 @@
 /**
 USER SHOW PAGE
 **/
+
 .container-user-show {
   margin-top: 20px;
 }
@@ -35,5 +36,14 @@ USER SHOW PAGE
 .pagination {
   width: 100%;
   font-size: 18px;
+  text-align: center;
+}
+
+
+/**
+USER EDIT PAGE
+**/
+
+.user-edit-header {
   text-align: center;
 }
