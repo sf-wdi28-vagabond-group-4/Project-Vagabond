@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       flash[:notice] = "New Post Created!"
       redirect_to city_path(@city)
     else
-      flash[:error] = @post.errors.full_messages
+      flash[:error] = @post.errors.full_messages.join(", ")
       render :new
     end
   end

@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to @user
     else
+      flash[:error] = "Email is already taken"
       render :new
     end
   end
