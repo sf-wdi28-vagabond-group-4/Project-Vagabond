@@ -36,7 +36,7 @@
             <div class="col-md-8 col-xs-12">
               <ul class="list-group form-inline">
                 <li class="list-group-item">
-                  <strong> <%= p.title %></strong><span class="pull-right"><%= p.created_at.strftime("%m/%d/%Y") %></span>
+                  <strong> <%= p.title %></strong><span class="pull-right"><small>posted <%= time_ago_in_words(p.created_at) %> ago</small></span>
                 </li>
 
                 <li class="list-group-item">
