@@ -1,16 +1,31 @@
+<div class="user-post-container container">
+    <div class="panel panel-default">
+        <div class="panel panel-header">
+            <span class="post-show-post-title"><%= @post.title %></span>
+            <span class="pull-right">
+              <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=@post.id%>/edit">Edit</a>
+              <%= link_to "Delete", city_post_path(@city.id, @post), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+            </span>
+        </div>
+        <div class="panel panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <%= link_to image_tag(@user.image), user_path(@user), class: "city-image img-responsive" %>
+                </div>
+                <div class="col-md-8">
+                    <div class="user-show-post-header-row">
+                        <h4 class="pull-right user-show-post-date"><small>posted <%= time_ago_in_words(@post.created_at) %> ago</small></h4>
+                    </div>
+                    <div>
+                        <p><%= @post.content %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
 
-<div class="post-show-container container">
-  <div class="row">
-      <h1><%=@post.title%></h1>
-      <h4>Posted In: <%= link_to "#{@city.city_name}", city_path(@city) %></h4>
-      <div class="post-show-city-picture row col-md-2 col-sm-2 col-xs-4"><a href="/users/<%=@user.id%>"><%= image_tag @user.image.url(:medium) %></a></div>
-      </br>
-      <div class="pull-right">
-        <%= link_to "Edit", edit_city_post_path(@post.city, @post), class: "btn btn-default btn-primary"%>
-        <%= link_to "Delete", city_post_path(@post.city, @post), method: :delete, class: "btn btn-default btn-danger"%>
-      </div>
-  </div>
-  <div class="row post-show-content">
-      <%= @post.content %>
-  </div>
+            </div>
+        </div>
+    </div>
 </div>

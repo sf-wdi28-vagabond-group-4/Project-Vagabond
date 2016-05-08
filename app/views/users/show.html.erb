@@ -1,60 +1,64 @@
 <div class="container-user-show container">
-  <% if flash[:notice] %>
+    <% if flash[:notice] %>
     <div class="alert alert-success" role="alert">
-      <%= flash[:notice] %>
+        <%= flash[:notice] %>
     </div>
-  <% end %>
-  <div class="col-md-12">
-    <div class="row" class="profile-row">
-      <div class="col-md-4 col-md-offset-2 col-xs-12 user-show-profile-pic">
-        <%= image_tag @user.image, class: "img-responsive" %><br>
-      </div>
-      <div class="col-md-4 col-xs-12">
-          <h1 class="user-show-profile-info profile-name">
-            <%= @user.first_name %> <%= @user.last_name %>
-          </h1>
-          <h3 class="user-show-profile-info">
-            <%= @user.current_city %>
-          </h3>
-          <h4 class="user-show-profile-info">
-            Joined on: <%= @user.created_at.strftime("%m/%d/%Y") %>
-          </h4>
-          <div class="user-show-profile-info">
-            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
-          </div>
-      </div>
-    </div>
-
-    <div class="user-show-user-posts-header"><h2><%= @user.first_name %>'s Posts:</h2></div>
-    <%= paginate @posts %>
-    <% @posts.each do |p| %>
-      <div class="user-post-container container">
-        <div class="panel panel-default">
-          <div class="panel panel-body">
-            <div class="row">
-              <div class="col-md-4">
-                <%= link_to image_tag(@city.city_picture), city_path(@city), class: "city-image img-responsive" %>
-              </div>
-              <div class="col-md-8">
-                <div class="user-show-post-header-row">
-                  <h3 class="user-show-post-title"><%= p.title %></h3>
-                  <h4 class="pull-right user-show-post-date"><%= p.created_at.strftime("%m/%d/%Y") %></h4>
-                </div>
-                <div>
-                  <p><%=h truncate(p.content, :length => 1000) %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <div class="row">
-              <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
-              <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
-            </div>
-          </div>
-        </div>
-      </div>
     <% end %>
-    <%= paginate @posts %>
-  </div>
+    <div class="col-md-12">
+        <div class="row" class="profile-row">
+            <div class="col-md-4 col-md-offset-2 col-xs-12 user-show-profile-pic">
+                <%= image_tag @user.image, class: "img-responsive" %><br>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <h1 class="user-show-profile-info profile-name">
+                    <%= @user.first_name %>
+                    <%= @user.last_name %>
+                </h1>
+                <h3 class="user-show-profile-info">
+                    <%= @user.current_city %>
+                </h3>
+                <h4 class="user-show-profile-info">
+                    Joined on:
+                    <%= @user.created_at.strftime("%m/%d/%Y") %>
+                </h4>
+                <div class="user-show-profile-info">
+                    <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-show-user-posts-header">
+            <h2><%= @user.first_name %>'s Posts:</h2>
+        </div>
+        <%= paginate @posts %>
+        <% @posts.each do |p| %>
+        <div class="user-post-container container">
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <%= link_to image_tag(@city.city_picture), city_path(@city), class: "city-image img-responsive" %>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="user-show-post-header-row">
+                                <h3 class="user-show-post-title"><%= p.title %></h3>
+                                <h4 class="pull-right user-show-post-date"><%= p.created_at.strftime("%m/%d/%Y") %></h4>
+                            </div>
+                            <div>
+                                <p><%=h truncate(p.content, :length => 1000) %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
+                        <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+        <%= paginate @posts %>
+    </div>
 </div>

@@ -28,9 +28,6 @@ class UsersController < ApplicationController
       @city = City.find_by_id(@post.city_id)
     end
     @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
-    if current_user != @user
-      redirect_to root_path
-    end
   end
 
   def edit
