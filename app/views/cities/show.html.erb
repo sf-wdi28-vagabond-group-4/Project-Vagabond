@@ -1,5 +1,5 @@
-<div>
-    <%= image_tag @city.header_picture, class: 'img-responsive' %>
+<div class="city-show-banner city-container">
+    <%= image_tag @city.city_picture, class: 'city-show-header-image img-responsive' %>
 </div>
 <div class="city-show-container">
   <h3 class="city-show-header-title"><%= @city.city_name %></h3>
@@ -36,9 +36,7 @@
               <div class="col-md-8 col-xs-12">
                 <ul class="list-group form-inline">
                   <li class="list-group-item">
-
                     <strong> <%= p.title %></strong><span class="pull-right"><%= p.created_at.strftime("%m/%d/%Y") %></span>
-
                   </li>
 
                   <li class="list-group-item">
@@ -53,10 +51,8 @@
               </div>
             </div>
 
-
           </div>
         </div>
       </div>
       <% end %>
-
 </div>

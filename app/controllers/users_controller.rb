@@ -22,7 +22,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-
+    @posts = @user.posts.all.page(params[:page]).per(4)
+    @user.posts.each do |p|
+      @post = p
+    end
+    @city = City.find_by_id(@post.city_id)
     if current_user != @user
       redirect_to root_path
     end

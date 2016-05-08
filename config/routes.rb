@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :cities do
     resources :posts
   end
-  
+
   get "/welcome", to: "welcome#index"
 
   get "/login", to: "sessions#new", as: "login"
