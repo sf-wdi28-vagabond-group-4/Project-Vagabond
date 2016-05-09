@@ -28,9 +28,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if @user == current_user
-      @post = @city.posts.find(params[:id])
-    else
+    @post = @city.posts.find(params[:id])
+    @user = User.find_by_id(@post.user_id)
+    if @user != current_user
       redirect_to root_path
     end
     # unless current_user.id == @post.user.id
