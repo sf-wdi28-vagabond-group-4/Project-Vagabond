@@ -16,13 +16,13 @@
       <div class="panel-body">
         <%= form_for [@city, @post] do |f| %>
           <div class="form-field">
-            <%= f.text_field :title, required: true, placeholder: "Title" %>
+            <%= f.text_field :title, required: true, placeholder: "Title", class:"form-control" %>
           </div>
           <div class="form-field">
-            <%= f.text_area :content, required: true, placeholder: "Content" %>
+            <%= f.text_area :content, required: true, placeholder: "Content", rows: 5, class:"form-control" %>
           </div>
           <div class="form-field city-show-post-button">
-          <%= f.submit "Post", class: "btn btn-lg btn-success city-show-post-button"%>
+          <%= f.submit "Submit Post", class: "btn btn-block btn-success city-show-post-button"%>
           </div>
         <% end %>
       </div>
