@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   patch "/users/:id/password_reset", to: "users#password_update"
 
+  get ':not_found' => redirect('/'), :constraints => { :not_found => /.*/ }
+
+  get "*path" => redirect('/')
+
 end
