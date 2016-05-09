@@ -7,16 +7,25 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+
+  font-family: 'ABeeZee', sans-serif;
+  color: white;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+.container-index{
   font-family: 'ABeeZee', sans-serif;
   color: white;
 }
 
-.display-3{
-  text-align: center;
-  font-size: 200px;
-}
+// .display-3{
+//   text-align: center;
+//   font-size: 100px;
+//   color: red;
+// }
 
-.lead{
-  text-align: center;
-  font-size: 150px;
-}
+// .lead{
+//   text-align: center;
+//   font-size: 150px;
+// }
