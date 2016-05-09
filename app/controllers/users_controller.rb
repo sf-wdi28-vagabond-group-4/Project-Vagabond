@@ -38,6 +38,17 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def password
+    @user = User.find_by_id(params[:id])
+  end
+
+  def password_update
+    @user = User.find_by_id(params[:id])
+    @user.update(user_params)
+    flash[:notice] = "Update Successful!"
+    redirect_to @user
+  end
+
 
   private
 

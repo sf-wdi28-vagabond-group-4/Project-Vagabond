@@ -14,4 +14,8 @@ Rails.application.routes.draw do
 
   get "/logout", to: "sessions#destroy"
 
+  get "/users/:id/password_reset", to: "users#password", as: "password"
+
+  patch "/users/:id/password_reset", to: "users#password_update"
+
 end
