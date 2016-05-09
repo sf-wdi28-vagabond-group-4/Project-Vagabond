@@ -2,10 +2,6 @@
     <div class="panel panel-default">
         <div class="panel panel-header">
             <span class="post-show-post-title"><%= @post.title %></span>
-            <span class="pull-right">
-              <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=@post.id%>/edit">Edit</a>
-              <%= link_to "Delete", city_post_path(@city.id, @post), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
-            </span>
         </div>
         <div class="panel panel-body">
             <div class="row">
@@ -24,7 +20,10 @@
         </div>
         <div class="panel-footer">
             <div class="row">
-
+              <span class="pull-right">
+                <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=@post.id%>/edit">Edit</a>
+                <%= link_to "Delete", city_post_path(@city.id, @post), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+              </span>
             </div>
         </div>
     </div>
