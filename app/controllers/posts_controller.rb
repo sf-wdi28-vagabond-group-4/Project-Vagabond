@@ -28,7 +28,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = @city.posts.find(params[:id])
+    if @user == current_user
+      @post = @city.posts.find(params[:id])
+    else
+      redirect_to root_path
+    end
     # unless current_user.id == @post.user.id
     #   render :show
     #   flash[:error] = "Not allowed to edit others post"
@@ -42,13 +46,17 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    if @user == current_user
+      @post = Post.find(params[:id])
 
-    if @post.destroy
-      flash[:error] = "Deleted Post!"
-    redirect_to user_path(current_user)
+      if @post.destroy
+        flash[:error] = "Deleted Post!"
+      redirect_to user_path(current_user)
+      else
+        flash[:error] = @post.errors.full_messages
+      end
     else
-      flash[:error] = @post.errors.full_messages
+      redirect_to root_path
     end
   end
 
