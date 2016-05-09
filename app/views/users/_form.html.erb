@@ -27,9 +27,8 @@
           <%= f.label :email %>
           <%= f.text_field :email, required: true, class: "email", placeholder: "Email" %>
         </div>
-        <div class="form-field">
-          <%= f.label :password %>
-          <%= f.password_field :password, required: true, class: "password", placeholder: "Password" %>
+        <div class="form-field reset-link">
+          <%= link_to "Reset Password", password_path(@user) %>
         </div>
         <%= f.submit "Update" %>
       <% end %>

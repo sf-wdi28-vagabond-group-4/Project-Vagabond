@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :cities, only: [:index, :show] do
-    resources :posts
+    resources :posts do
+      resources :comments, except: [:index, :show]
+    end
   end
 
   get "/welcome", to: "welcome#index"
@@ -13,5 +15,9 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   get "/logout", to: "sessions#destroy"
+
+  get "/users/:id/password_reset", to: "users#password", as: "password"
+
+  patch "/users/:id/password_reset", to: "users#password_update"
 
 end
