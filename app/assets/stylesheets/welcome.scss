@@ -1,6 +1,7 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .jumbotron {
   background-image: url(http://c.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2013/11/3021592-poster-1280-cities.jpg);
   background-repeat: no-repeat;
@@ -10,17 +11,21 @@
   margin-top: -20px;
   margin-bottom: -20px;
   text-align: center;
-  color: white;
-  font-family: 'ABeeZee', sans-serif;
-}
+  h1{
+      color: white;
+      font-family: 'ABeeZee', sans-serif;
+      font-size: 10vw;
+    }
+  p {
+      color: white;
+      font-family: 'ABeeZee', sans-serif;
+      font-size: 4vw;
+      // -webkit-text-stroke: 1px black;
+      color: white;
+    }
 
-@media (min-width: 200px) {
-  .site-title {
-    font-size: 100vh;
-    position: relative;
+  .btn {
+    font-size: 2vw;
+    font-family: 'ABeeZee', sans-serif;
+    }
   }
-}
-
-.lead{
-  font-size: 50px;
-}
