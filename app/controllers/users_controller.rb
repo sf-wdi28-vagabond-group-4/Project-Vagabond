@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :logged_in?, only: [:show]
+  before_action :find_user, only: [:show]
 
   def index
     @users = User.all
@@ -63,6 +64,15 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city, :image)
+    end
+
+    def find_user
+    # This assumes you have an association set up as needed
+      @user = User.find_by_id(params[:id])
+
+      if @user.nil?
+        redirect_to root_path
+      end
     end
 
 end
