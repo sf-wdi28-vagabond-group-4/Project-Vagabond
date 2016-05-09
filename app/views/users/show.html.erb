@@ -37,7 +37,7 @@
                   <div class="panel panel-body">
                       <div class="row">
                           <div class="col-md-4">
-                              <%= link_to image_tag(@city.city_picture), city_path(@city), class: "city-image img-responsive" %>
+                              <%= link_to image_tag(p.city.city_picture), city_path(p.city), class: "city-image img-responsive" %>
                           </div>
                           <div class="col-md-8">
                               <div class="user-show-post-header-row">
@@ -55,8 +55,8 @@
                   </div>
                   <div class="panel-footer">
                       <div class="row">
-                          <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
-                          <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+                          <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=p.city.id%>/posts/<%=p.id%>/edit">Edit</a>
+                          <%= link_to "Delete", city_post_path(p.city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
                       </div>
                   </div>
               </div>
