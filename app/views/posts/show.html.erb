@@ -37,7 +37,7 @@
   							<div class="col-md-8 col-md-offset-2 col-sm-12">
                   <h4>Add A Comment<h4>
   								<div class="form-group">
-  									<%= f.text_field :body, class: "form-control", placeholder: "Comment" %>
+  									<%= f.text_area :body, rows: 5, class: "form-control comment-input-area", placeholder: "Comment" %>
   									<% @post_id = @post.id %>
   									<% @user_id = current_user.id %>
   									<% @city_id = @post.city_id %>
