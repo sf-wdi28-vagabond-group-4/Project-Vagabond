@@ -16,14 +16,14 @@
                 <div class="col-md-5 col-md-offset-2 col-xs-12 user-show-profile-pic">
                     <%= image_tag @user.image, class: "img-responsive" %>
                 </div>
-                <div class="col-md-3 col-xs-12">
-                    <h1 class="user-show-profile-info profile-name">
+                <div class="col-md-4 col-xs-12">
+                    <h2 class="user-show-profile-info profile-name">
                         <%= @user.first_name %>
                         <%= @user.last_name %>
-                    </h1>
-                    <h3 class="user-show-profile-info">
+                    </h2>
+                    <h4 class="user-show-profile-info">
                         <%= @user.email %>
-                    </h3>
+                    </h4>
                     <h3 class="user-show-profile-info">
                         <%= @user.current_city %>
                     </h3>
