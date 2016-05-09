@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
       redirect_to city_post_path(@city, @post)
     else
       flash.now[:error] = @comment.errors.full_messages
+      redirect_to city_post_path(@city, @post)
     end
   end
 
