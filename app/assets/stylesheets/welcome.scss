@@ -7,7 +7,17 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+  margin-top: -20px;
+  margin-bottom: -20px;
   text-align: center;
   color: white;
-  text-shadow: 2px 2px 2px #DF9958;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.display-3{
+  font-size: 200px;
+}
+
+.lead{
+  font-size: 50px;
 }
