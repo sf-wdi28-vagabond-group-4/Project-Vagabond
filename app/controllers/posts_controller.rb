@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.destroy
-      flash[:notice] = "Deleted Post!"
+      flash[:error] = "Deleted Post!"
     redirect_to user_path(current_user)
     else
       flash[:error] = @post.errors.full_messages
