@@ -14,9 +14,10 @@
   font-family: 'ABeeZee', sans-serif;
 }
 
-.title-splash{
-  font-size: 100vw;
-  position: relative;
+@media (min-width: 200px) {
+  .site-title {
+    font-size: 400px;
+  }
 }
 
 .lead{
