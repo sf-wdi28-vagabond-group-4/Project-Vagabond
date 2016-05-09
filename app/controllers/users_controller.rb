@@ -22,11 +22,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    @posts = @user.posts.order("created_at desc")
-    @posts.each do |p|
-      @post = p
-      @city = City.find_by_id(@post.city_id)
-    end
+    @posts = @user.posts.all.order("created_at desc")
     @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(5)
   end
 
