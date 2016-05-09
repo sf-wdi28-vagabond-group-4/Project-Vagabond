@@ -56,7 +56,7 @@
                           <div class="col-md-8">
                               <div class="user-show-post-header-row">
                                   <h3 class="user-show-post-title"><%= p.title %></h3>
-                                  <h4 class="pull-right user-show-post-date"><%= p.created_at.strftime("%m/%d/%Y") %></h4>
+                                  <h4 class="pull-right user-show-post-date"><small>posted <%= time_ago_in_words(p.created_at) %> ago</small></h4>
                               </div>
                               <div>
                                   <p><%= h truncate(p.content, :length => 1000) %>
