@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :logged_in?, only: [:show]
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:show, :password]
 
   def index
     @users = User.all
