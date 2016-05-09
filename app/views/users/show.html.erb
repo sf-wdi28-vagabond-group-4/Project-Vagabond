@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="row" class="profile-row">
             <div class="col-md-4 col-md-offset-2 col-xs-12 user-show-profile-pic">
-                <%= image_tag @user.image, class: "img-responsive" %><br>
+                <%= image_tag @user.image, class: "img-responsive" %>
             </div>
             <div class="col-md-4 col-xs-12">
                 <h1 class="user-show-profile-info profile-name">
@@ -32,32 +32,35 @@
         </div>
         <%= paginate @posts %>
         <% @posts.each do |p| %>
-        <div class="user-post-container container">
-            <div class="panel panel-default">
-                <div class="panel panel-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <%= link_to image_tag(@city.city_picture), city_path(@city), class: "city-image img-responsive" %>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="user-show-post-header-row">
-                                <h3 class="user-show-post-title"><%= p.title %></h3>
-                                <h4 class="pull-right user-show-post-date"><small>posted <%= time_ago_in_words(p.created_at) %> ago</small></h4>
-                            </div>
-                            <div>
-                                <p><%=h truncate(p.content, :length => 1000) %></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-footer">
-                    <div class="row">
-                        <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
-                        <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <div class="user-post-container container">
+              <div class="panel panel-default">
+                  <div class="panel panel-body">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <%= link_to image_tag(@city.city_picture), city_path(@city), class: "city-image img-responsive" %>
+                          </div>
+                          <div class="col-md-8">
+                              <div class="user-show-post-header-row">
+                                  <h3 class="user-show-post-title"><%= p.title %></h3>
+                                  <h4 class="pull-right user-show-post-date"><%= p.created_at.strftime("%m/%d/%Y") %></h4>
+                              </div>
+                              <div>
+                                  <p><%= h truncate(p.content, :length => 1000) %>
+                                    <% if p.content.length > 1000 %>
+                                      <%= link_to "Read More", city_post_path(p.city, p) %></p>
+                                    <% end %>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="panel-footer">
+                      <div class="row">
+                          <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
+                          <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+                      </div>
+                  </div>
+              </div>
+          </div>
         <% end %>
         <%= paginate @posts %>
     </div>
