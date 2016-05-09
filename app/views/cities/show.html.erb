@@ -70,7 +70,7 @@
                 <div class="row">
                   <% if current_user.id == p.user_id  %>
                     <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=p.id%>/edit">Edit</a>
-                    <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+                    <%= link_to "Delete", city_post_path(@city.id, p), method: :delete, data: {confirm: "Delete Post?"}, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
                   <% end %>
 
                 </div>
