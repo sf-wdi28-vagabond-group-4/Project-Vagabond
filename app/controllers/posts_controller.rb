@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :set_city
-  before_action :find_post
+  before_action :find_post, only: [:show, :index]
 
   def index
     @posts = Post.all
