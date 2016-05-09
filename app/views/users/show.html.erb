@@ -21,9 +21,11 @@
                     Joined on:
                     <%= @user.created_at.strftime("%m/%d/%Y") %>
                 </h4>
+                <% if @user == current_user %>
                 <div class="user-show-profile-info">
                     <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
                 </div>
+                <% end %>
             </div>
         </div>
 
@@ -53,12 +55,14 @@
                           </div>
                       </div>
                   </div>
+                  <% if @user == current_user %>
                   <div class="panel-footer">
                       <div class="row">
                           <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=p.city.id%>/posts/<%=p.id%>/edit">Edit</a>
                           <%= link_to "Delete", city_post_path(p.city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
                       </div>
                   </div>
+                  <% end %>
               </div>
           </div>
         <% end %>
