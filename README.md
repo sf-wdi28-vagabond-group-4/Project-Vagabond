@@ -1,9 +1,5 @@
 # Project-Vagabond
+---
+##### Share your travel experience in different cities around the world
 
-Justin
-
-Matt
-
-Scott Alexis Madrid
-
-ANNA
+[Find it on Heroku](https://vagabond-team4.herokuapp.com/)
