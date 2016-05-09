@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   resources :users
-  resources :cities do
+  resources :cities, only: [:index, :show] do
     resources :posts
   end
 
@@ -13,7 +13,5 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   get "/logout", to: "sessions#destroy"
-
-  get "/cities", to: "cities#index"
 
 end
