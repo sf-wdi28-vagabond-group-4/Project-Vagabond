@@ -71,7 +71,7 @@
                   <div class="panel-footer">
                       <div class="row">
                           <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=p.city.id%>/posts/<%=p.id%>/edit">Edit</a>
-                          <%= link_to "Delete", city_post_path(p.city.id, p), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
+                          <%= link_to "Delete", city_post_path(p.city.id, p), method: :delete, data: {confirm: "Delete Post?"}, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
                       </div>
                   </div>
                   <% end %>
