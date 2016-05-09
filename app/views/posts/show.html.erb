@@ -22,7 +22,7 @@
         <div class="panel-footer">
             <div class="row">
               <span class="pull-right">
-                <% if current_user%>
+                <% if current_user.id == @post.user_id%>
                 <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=@post.id%>/edit">Edit</a>
                 <%= link_to "Delete", city_post_path(@city.id, @post), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
                 <% end %>
