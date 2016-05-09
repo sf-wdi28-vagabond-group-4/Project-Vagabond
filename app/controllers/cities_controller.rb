@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
 
+before_action :find_city, only: [:show]
+
   def index
     @cities = City.all
     render :index
@@ -35,6 +37,15 @@ class CitiesController < ApplicationController
 
   def city_params
     params.require(:city).permit(:city_name, :state, :country, :city_picture, :header_picture)
+  end
+
+  def find_city
+  # This assumes you have an association set up as needed
+    @city = City.find_by_id(params[:id])
+
+    if @city.nil?
+      redirect_to root_path
+    end
   end
 
 end

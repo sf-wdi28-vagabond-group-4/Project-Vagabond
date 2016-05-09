@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :set_city
+  before_action :find_post
 
   def index
     @posts = Post.all
@@ -71,5 +72,13 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :content, :city_id, :user_id)
     end
 
+    def find_post
+    # This assumes you have an association set up as needed
+      @post = Post.find_by_id(params[:id])
+
+      if @post.nil?
+        redirect_to root_path
+      end
+    end
 
 end
