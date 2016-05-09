@@ -45,10 +45,6 @@
 						</div>
 					<% end %>
 				<% end %>
-        <%= @post %>
-        <%= @post.comments %>
-        <%= @city %>
-
 				<strong> <p>Comments:</p> </strong>
         <hr>
 				<% @post.comments.each do |c| %>
@@ -59,10 +55,6 @@
               </div>
 							<p><%= c.body %></p>
 							<p class="small pull-right">posted <%= time_ago_in_words(c.created_at) %> ago</p><br>
-              <% if current_user && current_user.id == @post.user_id%>
-                <a class="user-show-post-button pull-right btn btn-primary" href="/cities/<%=@city.id%>/posts/<%=@post.id%>/edit">Edit</a>
-                <%= link_to "Delete", city_post_path(@city.id, @post), method: :delete, class: "user-show-post-button pull-right btn btn-default btn-danger"%>
-              <% end %>
 						</div>
 					</div>
           <hr>
