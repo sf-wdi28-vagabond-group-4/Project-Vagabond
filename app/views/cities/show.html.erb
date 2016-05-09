@@ -48,6 +48,7 @@
             <div class="panel panel-body">
                 <div class="row">
                     <div class="col-xs-3">
+                        <% @user = User.find_by_id(p.user_id) %>
                         <%= link_to image_tag(@user.image), user_path(@user), class: "city-image img-responsive" %>
                     </div>
                     <div class="col-xs-9">

@@ -18,12 +18,7 @@ class CitiesController < ApplicationController
     @city = City.find_by_id(params[:id])
     @post = Post.new
     @posts = @city.posts.order("created_at desc")
-    @posts.each do |p|
-      @post = p
-      @user = User.find_by_id(@post.user_id)
-    end
     @posts = Kaminari.paginate_array(@posts).page(params[:page]).per(10)
-    @post = Post.new
   end
 
   def edit
