@@ -29,3 +29,28 @@
   * see all their posts in their public profile
   * see other users' public profile
   * edit/delete their own posts
+
+---
+
+### Planned Features
+* A user is able to edit/delete their own comments
+* User password reset
+* Upvote/Downvote posts
+
+---
+
+### Contributors
+[Justin Tam](https://github.com/jtam11)
+
+[Anna Schwab](https://github.com/cloverharvest)
+
+[Matt Vilhauer](https://github.com/matthewvilhauer)
+
+[Scott Madrid](https://github.com/samadrid92)
+
+### Screenshots
+![Alt text](public/splash_screen_ss.png "Splash Screen")
+
+![Alt text](public/cities_index_ss.png "Cities Index")
+
+![Alt text](public/public_profile_ss.png "Public Profile")
