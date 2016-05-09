@@ -39,6 +39,11 @@ USER SHOW PAGE
   text-align: center;
 }
 
+@media (min-width: 1000px) { 
+  .profile-name {
+    margin-top: 20%;
+  }
+}
 
 /**
 USER EDIT PAGE
