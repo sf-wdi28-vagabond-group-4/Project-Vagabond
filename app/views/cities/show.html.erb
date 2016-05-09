@@ -52,8 +52,10 @@
                             <h4 class="pull-right user-show-post-date"><small>posted <%= time_ago_in_words(p.created_at) %> ago</small></h4>
                         </div>
                         <div>
-                            <p><%=h truncate(p.content, :length => 1000) %></p>
-                            <%= link_to "Read More", city_post_path(p.city, p), class:"read-more"%>
+                            <p><%=h truncate(p.content, :length => 1000) %>
+                            <% if p.content.length > 1000 %>
+                              <%= link_to "Read More", city_post_path(p.city, p) %></p>
+                            <% end %>
                         </div>
                     </div>
                 </div>
